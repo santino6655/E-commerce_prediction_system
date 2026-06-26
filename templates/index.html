@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Commerce Purchase Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🛒 E-Commerce Purchase Predictor</h1>
+
+        <p class="subtitle">
+            Predict whether a customer is likely to complete a purchase based on their shopping behaviour.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <label>Customer Age</label>
+            <input
+                type="number"
+                name="age"
+                placeholder="Example: 24"
+                required>
+
+            <label>Browsing History</label>
+            <input
+                type="number"
+                name="browsing"
+                placeholder="Example: 18 pages viewed"
+                required>
+
+            <label>Cart Value ($)</label>
+            <input
+                type="number"
+                name="cart"
+                placeholder="Example: 275"
+                required>
+
+            <label>Category Viewed</label>
+
+            <select name="category" required>
+
+                <option value="">-- Select Category --</option>
+
+                <option value="0">💄 Beauty</option>
+                <option value="1">📚 Books</option>
+                <option value="2">💻 Electronics</option>
+                <option value="3">👕 Fashion</option>
+                <option value="4">🏠 Home</option>
+                <option value="5">⚽ Sports</option>
+
+            </select>
+
+            <label>Visit Duration (Minutes)</label>
+            <input
+                type="number"
+                name="duration"
+                placeholder="Example: 22"
+                required>
+
+            <button type="submit">
+                🔍 Predict Purchase
+            </button>
+
+        </form>
+
+        {% if prediction %}
+
+        <div class="result">
+
+            <h3>Prediction Result</h3>
+
+            <p>{{ prediction }}</p>
+
+        </div>
+
+        {% endif %}
+
+        <a href="/dashboard" class="dashboard-btn">
+            📊 View Dashboard
+        </a>
+
+    </div>
+
+    <footer>
+
+        <p>
+            Machine Learning Project | E-Commerce Product Recommendation Classification
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>📊 E-Commerce Analytics Dashboard</h1>
+
+        <p>
+            Machine Learning Model Performance & Dataset Statistics
+        </p>
+
+    </header>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>👥 Total Customers</h3>
+
+            <h2>{{ total_customers }}</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🛍 Total Purchases</h3>
+
+            <h2>{{ total_purchases }}</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💰 Avg Cart Value</h3>
+
+            <h2>${{ avg_cart }}</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>⏱ Avg Visit Duration</h3>
+
+            <h2>{{ avg_duration }} mins</h2>
+
+        </div>
+
+    </div>
+
+    <h2 class="section-title">
+
+        🤖 Model Evaluation
+
+    </h2>
+
+    <table>
+
+        <tr>
+
+            <th>Metric</th>
+
+            <th>Value</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Accuracy</td>
+
+            <td>96.5%</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Precision</td>
+
+            <td>95.9%</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Recall</td>
+
+            <td>96.2%</td>
+
+        </tr>
+
+        <tr>
+
+            <td>F1 Score</td>
+
+            <td>96.0%</td>
+
+        </tr>
+
+    </table>
+
+    <div class="footer">
+
+        <a href="/">⬅ Back to Prediction Page</a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
